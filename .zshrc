@@ -59,10 +59,15 @@ if [ "$EUID" -eq 0 ]; then
 fi
 PROMPT="[%T]%{$fg[$color]%}%n %{$fg[blue]%}%~ %#%{$reset_color%} "
 
-alias ls='ls --color=auto --group-directories-first --all --classify -l'
+alias ls='ls --color=auto --group-directories-first'
 alias tail='multitail'
 alias df='df -h'
-alias du='du -h --max-depth=1 | sort -h'
+alias du='du -h -max-depth=1 | sort -h'
+alias start='sudo systemctl start'
+alias restart='sudo systemctl restart'
+alias stop='sudo systemctl stop'
+alias status='sudo systemctl status'
+alias reload='sudo systemctl reload'
 
 #Color Grep and add yellow color
 export GREP_COLORS="mt=33"
